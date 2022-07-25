@@ -1,0 +1,6 @@
+additionalArguments:
+  - "--log.level=DEBUG"
+
+ingressRoute:
+  dashboard:
+    enabled: true

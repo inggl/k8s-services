@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: appname
+  namespace: namespace
+  labels:
+    app: appname
+spec:
+  selector:
+    matchLabels:
+      app: appname
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: appname
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:latest
+          # resources:
+          #   limits:
+          #     memory: 512Mi
+          #     cpu: "1"
+          #   requests:
+          #     memory: 256Mi
+          #     cpu: "0.2"
+          ports:
+            # Ports are the ports that your application uses.
+            - containerPort: 80

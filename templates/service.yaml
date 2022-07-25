@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: servicename
+  namespace: namespace
+spec:
+  selector:
+    app: appname
+  # ---
+  # type:  ClusterIP # Service can be accessed by any pod in the cluster
+  # ports:
+  # - name:  http
+  #   port:  8080
+  #   targetPort: 80
+  # ---
+  # type:  NodePort # Service is only accessible by pods in the same namespace
+  # ports:
+  # - name:  http
+  #   port:  80
+  #   nodePort: 30001
+  # ---
+  # type:  LoadBalancer # Service is load-balanced across all nodes in the cluster
+  # ports:
+  # - name:  http
+  #   port:  80
+  #   targetPort: 30001
+  #   protocol: TCP  # optional protocol
